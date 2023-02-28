@@ -2,7 +2,7 @@ import copy
 import heapq
 import time
 
-class Graph :
+class Graph : # graph class
     hrad_nodes_time = []
     def __init__(self, E = [], V = 0, cur_node = 0, hards = {}, morids = {}) :
         self.E = E
