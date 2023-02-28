@@ -19,33 +19,33 @@ class Graph : # graph class
         self.E[u-1].append(v-1)
         self.E[v-1].append(u-1)
 
-    def set_morids(self):
-        s = int(input())
+    def set_morids(self, input_file):
+        s = int(input_file.readline())
         dis = {}
         for i in range(s):
-            line = list(map(int, input().split()))
+            line = list(map(int, input_file.readline().split()))
             dis[line[0]-1] = list(map(lambda x : x-1 , line[2:]))
             for j in range(len(dis[line[0]-1])):
                 dis[line[0]-1][j] = [dis[line[0]-1][j], False]
         self.morids = dis
 
-    def set_hards_v(self):
-        int(input())
-        h = list(map(int, input().split())) ;
+    def set_hards_v(self, input_file):
+        int(input_file.readline())
+        h = list(map(int, input_file.readline().split())) ;
         h = list(map(lambda x:x-1, h))
         self.hards = h
         self.hrad_nodes_time = [0 for _ in range(self.V)]
 
-    def get_graph(self):
-        n, m = map(int, input().split())
+    def get_graph(self, input_file):
+        n, m = map(int, input_file.readline().split())
         self.E = [ [] for _ in range(n) ]
         for _ in range(m) :
-            u, v = map(int, input().split())
+            u, v = map(int, input_file.readline().split())
             self.add_edge(u, v)
         self.V = n
-        self.set_hards_v()
-        self.set_morids()
-        self.cur_node = int(input()) - 1
+        self.set_hards_v(input_file)
+        self.set_morids(input_file)
+        self.cur_node = int(input_file.readline()) - 1
         
     def print_graph(self):
         print("*** GRAPH ***")
