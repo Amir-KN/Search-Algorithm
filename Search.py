@@ -286,9 +286,10 @@ def Astar(init_state, alpha = 1) :
 
 
 
-
+input_file = open("./Inputs/in1.txt")
 g = Graph()
-g.get_graph()
+g.get_graph(input_file)
+input_file.close()
 
 initial_state = State(graph=g, path = [g.cur_node+1])
 
