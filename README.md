@@ -14,3 +14,4 @@ in code we use first input :
 ```
 input_file = open("./Inputs/in1.txt")
 ```
+You can add test case to `Search-Algorithm/Inputs/` directory.
